@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accessible Map</title>
+    <!-- Pointer events polyfill for old browsers, see https://caniuse.com/#feat=pointer -->
+    <!--用于嵌入或引用可执行脚本。src这个属性定义引用外部脚本的 URI，这可以用来代替直接在文档中嵌入脚本。指定了 src 属性的 script 元素标签内不应该再有嵌入的脚本。-->
+    <script src="https://unpkg.com/elm-pep@1.0.6/dist/elm-pep.js"></script>
+    <!-- The lines below are only needed for old environments like Internet Explorer and Android 4.x -->
+    <script src="https://cdn.polyfill.io/v3/polyfill.min.js?features=fetch,requestAnimationFrame,Element.prototype.classList,TextDecoder"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/3.18.3/minified.js"></script>
+    <!--<link> 规定了当前文档与外部资源的关系，rel表示关系，常为stylesheet（属性表），href设置外部资源的路径-->
+    <link rel="stylesheet" href="../node_modules/ol/ol.css">
+    <style>
+        /*类属性选择器*/
+        .map {
+            width: 100%;
+            height:400px;
+        }
+        /*a.skiplink:  设置a元素中class为skiplink的样式*/
+        a.skiplink {
+            position: absolute;
+            clip: rect(1px, 1px, 1px, 1px);
+            padding: 0;
+            border: 0;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+        }
+        /*:focus  css伪类，当元素获取焦点时触发（点击或键盘选择）*/
+        a.skiplink:focus {
+            clip: auto;
+            height: auto;
+            width: auto;
+            background-color: #fff;
+            padding: 0.3em;
+        }
+        #map:focus {
+            outline: #4A74A8 solid 0.15em;
+        }
+    </style>
+</head>
+<body>
+<a class="skiplink" href="#map">Go to map</a>
+<div id="map" class="map" tabindex="0"></div>
+<button id="zoom-out">Zoom out</button>
+<button id="zoom-in">Zoom in</button>
+<script type="module" src="main.js"></script>
+</body>
+</html>
