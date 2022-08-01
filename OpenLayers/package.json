@@ -7,7 +7,7 @@
     "parcel": "^2.0.0"
   },
   "scripts": {
-    "start": "parcel 2.NavigationTools/index.html",
-    "build": "parcel build --public-url 2.NavigationTools index.html"
+    "start": "parcel 2.Controls/index.html",
+    "build": "parcel build --public-url 2.Controls index.html"
   }
 }

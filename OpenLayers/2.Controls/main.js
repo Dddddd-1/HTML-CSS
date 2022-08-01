@@ -56,7 +56,7 @@ const map = new Map({
 map.addControl(fullScreen)
 //添加缩放滑块控件
 map.addControl(zoomSlider)
-//添加改变视图按钮（与上一个控件位置冲突）
+//添加改变视图按钮（与上一个控件的默认位置冲突）
 map.addControl(zoomToExtent)
 //添加鹰眼控件
 map.addControl(overviewMap)
