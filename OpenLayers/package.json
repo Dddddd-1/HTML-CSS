@@ -1,0 +1,13 @@
+{
+  "name": "accessible",
+  "dependencies": {
+    "ol": "6.15.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  },
+  "scripts": {
+    "start": "parcel 1.AccessableMap/index.html",
+    "build": "parcel build --public-url 1.AccessableMap index.html"
+  }
+}
