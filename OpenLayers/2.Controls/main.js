@@ -7,7 +7,9 @@ import {OverviewMap, ZoomSlider, FullScreen,ZoomToExtent, defaults as defaultCon
 //新建全屏显示控件
 const fullScreen = new FullScreen()
 //新建缩放滑块控件
-const zoomSlider = new ZoomSlider()
+const zoomSlider = new ZoomSlider({
+    className:"zoomSlider"
+})
 //新建改变视图控件
 const zoomToExtent = new ZoomToExtent({
     //设置缩放范围
