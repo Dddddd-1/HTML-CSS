@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    /* 
+      伪类：不存在的类，用于描述一个类的特殊状态。
+        以冒号开头
+    */
+    /* 第一个子元素 */
+    /* ul > li:first-child {
+      color: red;
+    } */
+    /* 最后一个子元素 */
+    /* ul > li:last-child {
+      color: red;
+    } */
+    /* 
+    指定第n个子元素，直接写n，n的范围为自然数
+    2n表示选择偶数位的元素(even)
+    2n+1 奇数位(odd)
+     */
+    /* ul > li:nth-child(3) {
+      color: red;
+    } */
+
+    /* 此类伪类不能选中不同类型的元素 */
+
+    /* 
+    :fiert-of-type
+    :last-of-type
+    :nth-of-type()
+    此类伪类功能与上述类似，不同点是它们针对的是同类型元素
+*/
+
+    /* 
+    :not()    否定伪类
+    将某些符合条件的元素从选择器中去除
+*/
+    ul > li:not(:nth-of-type(3)) {
+      color: red;
+    }
+  </style>
+  <body>
+    <ul>
+      <span>我是一个span</span>
+      <li>第一个</li>
+      <li>第二个</li>
+      <li>第三个</li>
+      <li>第四个</li>
+      <li>第五个</li>
+    </ul>
+  </body>
+</html>
