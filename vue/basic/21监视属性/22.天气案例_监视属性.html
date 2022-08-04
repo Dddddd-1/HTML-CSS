@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- 引入Vue -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+    <!-- 准备好一个容器 -->
+    <div id="root">
+        <h2>今天天气很{{info}}</h2>
+        <!-- 绑定事件的时候：@xxx="yyy" yyy可以写一些简单的语句 -->
+        <!-- <button @click="isHot = !isHot">切换天气</button> -->
+        <button @click="changeweather">切换天气</button>
+    </div>
+</body>
+
+<script type="text/javascript">
+    Vue.config.productionTip=false;//阻止vue在启动时生成生产提示。
+
+    const vm = new Vue({
+        el:'#root',
+        data:{
+            isHot:true
+        },
+        computed:{
+            info(){
+                return this.isHot?'炎热':'凉爽'
+            }
+        },
+        methods:{
+            changeweather(){
+                this.isHot = !this.isHot
+            }
+        },
+        
+        /* watch:{//属性与计算属性都可以用监视
+            isHot:{
+                immediate:true,//初始化时让handler调用一下，默认为false
+                //handler什么时候调用？当isHot发生变化时
+                handler(newValue,oldValue){
+                    console.log('isHot被修改了',newValue,oldValue)
+                }
+            }
+        } */
+
+        
+
+        })
+        vm.$watch('isHot',{
+            immediate:true,
+            handler(newValue,oldValue){
+                console.log('isHot被修改了',newValue,oldValue)
+            }
+   })
+</script>
+
+</html>
+
+<!-- 
+    监视属性watch
+        1. 当被监视的属性发生变化时，回调函数自动调用（如handler），进行相关操作
+        2. 监视的属性必须存在，才能进行监视
+        3. 监视的两种写法
+            （1）new Vue时传入watch配置
+            （2）通过vm.$watch监视
+
+ -->

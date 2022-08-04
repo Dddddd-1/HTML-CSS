@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>初始Vue</title>
+    <!-- 引入Vue -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+    <!-- 准备好一个容器 -->
+    <div id="root">
+        <h1>Hello,{{name.toUpperCase()}},{{address}}</h1>         <!-- 插值符号 --> <!-- 花括号里的内容为js里的表达式 -->
+    </div>
+
+    <div id="root2">
+        <h1>Hello,{{name}},{{address}}</h1>         <!-- 插值符号 -->
+    </div>
+
+    <!-- 
+        注意区分：表达式和代码（语句）
+        1. 表达式：一个表达式会产生一个值，可以放在任何一个需要值的地方；
+            (1) a
+            (2) a+b
+            (3) demo(1)
+            (4) x === y ? 'a' : 'b'
+        2. js代码(语句)
+            (1)if
+            (2)for
+     -->
+    <script type="text/javascript">
+        Vue.config.productionTip = false//阻止 vue 在启动时生成生产提示。
+
+        //创建Vue实例
+        new Vue({
+            el:'#root',//el用于指定当前Vue实例为哪个容器服务，值通常为css选择器字符。
+            data:{//data中用于存储数据，数据供el所指定的容器去使用，值暂时先写成一个对象（函数）。
+                name:'atguigu',
+                address:'上海'
+            }
+        })
+
+        new Vue({
+            el:'#root2',//el用于指定当前Vue实例为哪个容器服务，值通常为css选择器字符。
+            data:{//data中用于存储数据，数据供el所指定的容器去使用，值暂时先写成一个对象（函数）。
+                name:'尚硅谷',
+                address:'北京'
+            }
+        })
+    </script>
+</body>
+</html>
+<!-- 
+    1. Vue实例与容器是一一对应的；
+    2. 真实开发中只有一个Vue实例，并且会配合着组件一起使用；
+    3. {{xxx}}中的xxx要写js表达式，且xxx可以自动读取到data中的所有属性；
+    4. 一旦data中的数据发生改变，那么页面中用到该数据的地方也会自动更新；
+ -->
