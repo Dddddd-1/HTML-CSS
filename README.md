@@ -1,2 +1,2 @@
-# HTML-CSS
-It's a test for me to learn HTML and CSS
+# Web
+It's a test for me to learn front-end knowledge
