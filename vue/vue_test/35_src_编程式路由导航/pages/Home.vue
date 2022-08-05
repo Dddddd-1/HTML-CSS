@@ -22,16 +22,7 @@
           >
         </li>
       </ul>
-      <!-- include里的是组件名 -->
-      <!-- 
-        缓存一个组件：
-        include:"News"
-        缓存多个组件：
-        :include:"['News','Message']"
-      -->
-      <keep-alive :include="['News', 'Message']">
-        <router-view></router-view>
-      </keep-alive>
+      <router-view></router-view>
     </div>
   </div>
 </template>
