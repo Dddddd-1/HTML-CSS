@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /* 
+          水仙花数
+              改进：可以将百位、十位、个位各用一个变量表示
+      */
+      // for (let i = 100; i < 1000; i++) {
+      //   if (
+      //     (i % 10) ** 3 +
+      //       (((i - (i % 10)) / 10) % 10) ** 3 +
+      //       parseInt(i / 100) ** 3 ===
+      //     i
+      //   ) {
+      //     console.log(i);
+      //   }
+      // }
+
+      for (let i = 100; i < 1000; i++) {
+        // 将i从数字变成字符串
+        let strI = i + "";
+        // 使用运算符将strI[x]从字符变成数字
+        if (strI[0] ** 3 + strI[1] ** 3 + strI[2] ** 3 === i) {
+          console.log(i);
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
